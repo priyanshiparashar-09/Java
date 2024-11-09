@@ -1,9 +1,9 @@
+package LearnStream;
 
 import java.util.Arrays;
 import java.util.List;
 
 public class EmployeeDataBase {
-
     public static List<Employee> getAllEmployees() {
         Project p1 = new Project("P001", "Alpha", "ABC Corp", "Alice");
         Project p2 = new Project("P002", "Beta", "XYZ Ltd", "Bob");

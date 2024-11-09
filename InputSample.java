@@ -14,4 +14,12 @@ public class InputSample {
 //        byte t =(byte)w;
 //
     }
+    final void hello(){
+        System.out.println("hello from priyanshi");
+    }
+  final void hello(int a ){
+
+    }
+
 }
+
