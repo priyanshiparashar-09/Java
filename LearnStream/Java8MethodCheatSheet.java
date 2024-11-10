@@ -87,6 +87,7 @@ public class Java8MethodCheatSheet {
 //skip(long)
 
         List<Employee> collect4 = employees.stream().skip(5).collect(Collectors.toList());
+        employees.stream().forEach(System.out::println);
     }
 
 }
