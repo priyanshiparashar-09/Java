@@ -13,6 +13,16 @@ public class Project {
         this.buLeadName = buLeadName;
     }
 
+    @Override
+    public String toString() {
+        return "Project{" +
+                "projectCode='" + projectCode + '\'' +
+                ", name='" + name + '\'' +
+                ", client='" + client + '\'' +
+                ", buLeadName='" + buLeadName + '\'' +
+                '}';
+    }
+
     public String getProjectCode() {
         return projectCode;
     }

@@ -21,23 +21,23 @@ public class Java8MethodCheatSheet {
 
 
         //Filter
-        List<Employee> deptFilter = employees.stream().filter(e->e.getDept()=="Development" &&e.getSalary()> 6500).collect(Collectors.toList());
+        List<Employee> deptFilter = employees.stream().filter(e -> e.getDept() == "Development" && e.getSalary() > 6500).collect(Collectors.toList());
 //        System.out.println(deptFilter);
 
-        Map<String,Long> deptWiseEmp=employees.stream().collect(Collectors.groupingBy(Employee::getDept,Collectors.counting()));
+        Map<String, Long> deptWiseEmp = employees.stream().collect(Collectors.groupingBy(Employee::getDept, Collectors.counting()));
 //        deptWiseEmp.forEach((dept,count)-> System.out.println(dept+":"+count));
 
 
         //Map,distinct
-     List<String> list=   employees.stream().map(e->e.getGender()).distinct().collect(Collectors.toList());
+        List<String> list = employees.stream().map(e -> e.getGender()).distinct().collect(Collectors.toList());
 //        System.out.println(list);
 
-      //flatMap -get list from the nested class
-       List<String> listProject =  employees.stream().flatMap(e->e.getProjects().stream()).map(p->p.getName()).distinct().collect(Collectors.toList());
+        //flatMap -get list from the nested class
+        List<String> listProject = employees.stream().flatMap(e -> e.getProjects().stream()).map(p -> p.getName()).distinct().collect(Collectors.toList());
 //        System.out.println(listProject);
 
 
-      //sort
+        //sort
 
         List<Employee> collect = employees.stream().sorted(Comparator.comparing(Employee::getSalary)).collect(Collectors.toList());
 //        System.out.println(collect);
@@ -47,8 +47,8 @@ public class Java8MethodCheatSheet {
 
 
         //min && mx
-     Optional<Employee> highestPaid=   employees.stream().max(Comparator.comparing(Employee::getSalary));
-        Optional<Employee> lowestPaid=   employees.stream().min(Comparator.comparing(Employee::getSalary));
+        Optional<Employee> highestPaid = employees.stream().max(Comparator.comparing(Employee::getSalary));
+        Optional<Employee> lowestPaid = employees.stream().min(Comparator.comparing(Employee::getSalary));
 //        System.out.println(highestPaid);
 //        System.out.println(lowestPaid);
 
@@ -72,14 +72,14 @@ public class Java8MethodCheatSheet {
 
         //anymatch(predicate),allmatch(predicate),noneMatch(predicate)
         boolean anyEmployeeDevelopment = employees.stream().anyMatch(e -> e.getDept().equals("priyanshi"));
-        System.out.println(anyEmployeeDevelopment);
+//        System.out.println(anyEmployeeDevelopment);
 
-        boolean allEmployeeDevelopment = employees.stream().allMatch(e -> e.getSalary()>500);
-        System.out.println(allEmployeeDevelopment);
+        boolean allEmployeeDevelopment = employees.stream().allMatch(e -> e.getSalary() > 500);
+//        System.out.println(allEmployeeDevelopment);
         boolean noneEmployeeDevelopment = employees.stream().noneMatch(e -> e.getDept().equals("priyanshi"));
-        System.out.println(noneEmployeeDevelopment);
-        
-        
+//        System.out.println(noneEmployeeDevelopment);
+
+
         //limit(long)
 
         List<Employee> collect3 = employees.stream().sorted(Comparator.comparing(Employee::getSalary).reversed()).limit(3).collect(Collectors.toList());
@@ -88,6 +88,9 @@ public class Java8MethodCheatSheet {
 
         List<Employee> collect4 = employees.stream().skip(5).collect(Collectors.toList());
         employees.stream().forEach(System.out::println);
+
+
     }
+
 
 }
