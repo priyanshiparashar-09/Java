@@ -1,9 +1,7 @@
 package LearnStream;
 
 
-import java.util.Arrays;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
@@ -49,6 +47,12 @@ public class CharacterFrequency {
                 .orElse(null);
 
         System.out.println(key2 );
+
+        List<String> strings = Arrays
+                .asList("apple", "banana", "cherry", "date", "grapefruit");
+        Optional<String> longestString = strings
+                .stream()
+                .max(Comparator.comparingInt(String::length));
 
 
 
