@@ -89,6 +89,17 @@ public class Java8MethodCheatSheet {
         List<Employee> collect4 = employees.stream().skip(5).collect(Collectors.toList());
         employees.stream().forEach(System.out::println);
 
+        Optional<Map.Entry<String, Double>> max = employees.stream().collect(Collectors.groupingBy(Employee::getDept, Collectors.summingDouble(Employee::getSalary))).entrySet().stream().max(Comparator.comparingDouble(k -> k.getValue()));
+
+        System.out.println(max);
+
+        //For each department, list the highest-paid employee.
+        Map<String, Optional<Employee>> collect5 = employees.stream().collect(Collectors.groupingBy(Employee::getDept, Collectors.maxBy(Comparator.comparingDouble(Employee::getSalary))));
+        System.out.println(collect5);
+
+        //For each project, find the employees working on it.
+        employees.stream().flatMap()
+
 
     }
 
