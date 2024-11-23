@@ -98,7 +98,9 @@ public class Java8MethodCheatSheet {
         System.out.println(collect5);
 
         //For each project, find the employees working on it.
-        employees.stream().flatMap()
+//        employees.stream().flatMap()
+
+
 
 
     }
